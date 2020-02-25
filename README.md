@@ -9,9 +9,9 @@ I have added 2 pooling layers, It's important not to have too many pooling layer
 In this case, since the images are small we didn't pool more than twice.
 
 Then I added the first Dense layer. Here I included a kernel constraint to regularize the data as it learns, another thing that helps prevent overfitting. And finally the last dense layer with one neuron as this is a binomial classifier model.
-I added dropout in all our layers too, at the begining I run a model without dropout in all the layers and it was overfitting, after add dropout I obtain a pretty good accuracy and the model was not overfitting as I can see in the metrics above (91.83% for train and 85.92% for test). 
+I added dropout in all our layers too, at the begining I run a model without dropout in all the layers and it was overfitting, after add dropout I obtain a pretty good accuracy and the model was not overfitting as it can be seen with the metrics (91.83% for train and 85.92% for test). 
 
-Finally the model was improved using the pretrained model VGG16, frizing all the convolutional layers and adding 3 more dense layers. Also we included early stopping to know the correct epochs that obtain the better accuracy and not overfit. The model stops in 3 epochs, achiving 90% in test and 92% in train. And loss of 0.24
+Finally the model was improved using the pretrained model VGG16, frizing all the convolutional layers and adding 3 more dense layers. Also we included early stopping to know the correct epochs that obtain the better accuracy and not overfit. The model stops in 3 epochs, achiving 90% in test and 92% in train (loss=0.24)
 
-The difference between the model that i obtained with the VGG16 are the layers, VGG16 include as the name say 16 layers, in terms of accuracy it doesnt grow that much, comparing that i used only 4 layers and obtained a 85% and with 12 more we only grow 5 porcentual points. But the real advantage at running VGG16 are the computional costs, as the layers were frized the model only train with the last dense layers, and that is an optimization of computational costs.
+The difference between the model that i obtained with the VGG16 are the layers, VGG16 includes 16 layers, in terms of accuracy it doesnt grow that much, when i used only 4 layers I obtained a 85% and with 12 more we only grow 5 porcentual points. But the real advantage at running VGG16 are the computional costs, as the layers were frized the model was only train with the last dense layers, and that is an clear advantage in saving time and computational costs optimization.
 
